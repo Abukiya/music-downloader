@@ -42,4 +42,4 @@ export MUSIC_DOWNLOAD_DIR="$HOME/Music"
 
 The command defaults to MP3 extraction, metadata and thumbnail embedding, playlist-specific folders, and skipping files that already exist. Useful options include `--audio-format m4a`, `--no-thumbnail`, `--no-metadata`, and `--dry-run`.
 
-The existing MP3 files in this directory are sample outputs and are not modified by the installer or the command.
+Downloads are written to the selected output directory, not into this source repository unless you explicitly choose it.
