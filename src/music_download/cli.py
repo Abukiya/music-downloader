@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-import os
 import shutil
 import subprocess
 import sys
@@ -14,8 +13,7 @@ YOUTUBE_HOSTS = {"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"}
 
 
 def default_output_directory() -> Path:
-    configured = os.environ.get("MUSIC_DOWNLOAD_DIR")
-    return Path(configured).expanduser() if configured else Path.home() / "Music"
+    return Path.cwd()
 
 
 def is_youtube_url(value: str) -> bool:
@@ -86,7 +84,7 @@ def parser() -> argparse.ArgumentParser:
         "--output",
         type=Path,
         default=default_output_directory(),
-        help="destination directory (default: ~/Music or MUSIC_DOWNLOAD_DIR)",
+        help="destination directory (default: current working directory)",
     )
     result.add_argument(
         "--audio-format",

@@ -57,8 +57,8 @@ class CliTests(unittest.TestCase):
         self.assertNotIn("--yes-playlist", command)
         self.assertTrue(any(item.endswith("%(title)s.%(ext)s") for item in command))
 
-    def test_default_directory_is_absolute(self):
-        self.assertTrue(default_output_directory().is_absolute())
+    def test_default_directory_is_current_working_directory(self):
+        self.assertEqual(default_output_directory(), Path.cwd())
 
 
 if __name__ == "__main__":

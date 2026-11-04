@@ -28,16 +28,10 @@ music-download "https://www.youtube.com/watch?v=VIDEO_ID"
 music-download "https://www.youtube.com/playlist?list=PLAYLIST_ID"
 ```
 
-By default, files go to `~/Music`. Override that destination for one download:
+By default, files go to the directory where you run the command, just like yt-dlp. For example, when your shell is in `~/muzika/muluken-melesse`, downloads go there. Override that destination for one download:
 
 ```bash
 music-download --output ~/Music/Amharic "PLAYLIST_URL"
-```
-
-To choose a persistent default destination, set `MUSIC_DOWNLOAD_DIR`:
-
-```bash
-export MUSIC_DOWNLOAD_DIR="$HOME/Music"
 ```
 
 The command defaults to MP3 extraction, metadata and thumbnail embedding, playlist-specific folders, and skipping files that already exist. Useful options include `--audio-format m4a`, `--no-thumbnail`, `--no-metadata`, and `--dry-run`.
